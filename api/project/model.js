@@ -5,12 +5,11 @@ const dbConfig = require('../../knexfile');
 const db = knex(dbConfig.development);
 
 const getProjects = async () => {
-    return await db('project')
-    // return Promise.resolve()
+    return await db('projects')
 }
 
-const createNewProject = (project) => {
-
+const createNewProject = async (project) => {
+    return await db('projects').insert(project)
 }
 
 module.exports = {

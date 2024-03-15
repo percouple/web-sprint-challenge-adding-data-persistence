@@ -4,22 +4,22 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('project').del()
-  await knex('resource').del()
-  await knex('task').del()
+  await knex('projects').del()
+  await knex('resources').del()
+  await knex('tasks').del()
   await knex('project_resources').del()
-  await knex('project').insert([
+  await knex('projects').insert([
     { "project_name": "bar", "project_description": null, "project_completed": false },
     { "project_name": "barfd", "project_description": "hkfdjshfkjdshf", "project_completed": false },
     { "project_name": "barasfasdf", "project_description": null, "project_completed": false }
   ]);
-  await knex('resource').insert([
+  await knex('resources').insert([
     { "resource_name": "foo", "resource_description": null },
     { "resource_name": "fojhfjfjho", "resource_description": "A BIG O;l CANDLE" },
     { "resource_name": "fo457654o", "resource_description": null },
     { "resource_name": "forshsjsjsjjsjo", "resource_description": "SEVERAL LARGE CATS" }
   ])
-  await knex('task').insert([
+  await knex('tasks').insert([
     { "task_description": "bfhfhfhf", "task_notes": null, "task_completed": false, "project_id": 1 },
     { "task_description": "bazsafdad", "task_notes": "some", "task_completed": false, "project_id": 1 },
     { "task_description": "basdfasdfaaz", "task_notes": null, "task_completed": false, "project_id": 2 },
